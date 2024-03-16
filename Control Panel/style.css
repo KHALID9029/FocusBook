@@ -1,0 +1,148 @@
+body
+{
+    background-color: #fdfdfd;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.header h1
+{
+    color: black;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 300px;
+    min-width: 100px;
+    font-weight: bold;
+}
+
+.container
+{
+    min-width: 370px;
+    padding: 0 1px 1px 1px;
+}
+
+.card 
+{
+    background-color: #6dac97;
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05),
+        0 1px 2px 0 rgba(0, 	0, 0, 0.05);
+}
+
+
+.mb-2
+{
+    margin-bottom: 1rem;
+}
+
+
+.switch
+{
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch.small
+{
+    width: 45px;
+    height: 22px;
+}
+
+.slider
+{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+
+.switch input
+{
+    display: none;
+}
+
+.slider:before
+{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.slider.small::before
+{
+    height: 15px;
+    width: 15px;
+}
+
+
+input:checked + .slider
+{
+    background-color: #0aeb42;
+}
+
+input:checked + .slider:before
+{
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+
+
+
+
+
+
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.options
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+.options-3
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
