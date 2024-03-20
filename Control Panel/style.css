@@ -113,6 +113,21 @@ input:checked + .slider
     background-color: #0aeb42;
 }
 
+
+.button-on
+{
+    color: #0aeb42;
+    color: white;
+}
+
+.button-off
+{
+    color: #ccc;
+    color: white;
+}
+
+
+
 input:checked + .slider:before
 {
     -webkit-transform: translateX(26px);
