@@ -54,12 +54,12 @@ function focusbook() {
 
     let focusbook = localStorage.getItem('Focusbook');
 
-    if (focusbook == 'Off') {
-        localStorage.setItem('Focusbook', 'On');
+    if (focusbook == 'On') {
+        localStorage.setItem('Focusbook', 'Off');
     }
 
     else {
-        localStorage.setItem('Focusbook', 'Off');
+        localStorage.setItem('Focusbook', 'On');
     }
 }
 
@@ -81,12 +81,12 @@ function blurryStart() {
 
     let blurryStart = localStorage.getItem('Blur');
 
-    if (blurryStart == 'Off') {
-        localStorage.setItem('Blur', 'On');
+    if (blurryStart == 'On') {
+        localStorage.setItem('Blur', 'Off');
     }
 
     else {
-        localStorage.setItem('Blur', 'Off');
+        localStorage.setItem('Blur', 'On');
     }
 }
 
@@ -138,14 +138,14 @@ function images()
 
     let set = localStorage.getItem('HideImages');
 
-    if (set == 'Off') 
+    if (set == 'On') 
     {
-        localStorage.setItem('HideImages', 'On');
+        localStorage.setItem('HideImages', 'Off');
     }
 
     else 
     {
-        localStorage.setItem('HideImages', 'Off');
+        localStorage.setItem('HideImages', 'On');
     }
 }
 
@@ -171,14 +171,14 @@ function reels()
 
     let set = localStorage.getItem('HideReels');
 
-    if (set == 'Off') 
+    if (set == 'On') 
     {
-        localStorage.setItem('HideReels', 'On');
+        localStorage.setItem('HideReels', 'Off');
     }
 
     else 
     {
-        localStorage.setItem('HideReels', 'Off');
+        localStorage.setItem('HideReels', 'On');
     }
 }
 
@@ -205,14 +205,14 @@ function posts()
 
     let set = localStorage.getItem('HidePosts');
 
-    if (set == 'Off') 
+    if (set == 'On') 
     {
-        localStorage.setItem('HidePosts', 'On');
+        localStorage.setItem('HidePosts', 'Off');
     }
 
     else 
     {
-        localStorage.setItem('HidePosts', 'Off');
+        localStorage.setItem('HidePosts', 'On');
     }
 }
 
@@ -224,68 +224,117 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-function setInitialButtonState() {
+function setInitialButtonState() 
+{
     let focusbook = localStorage.getItem('Focusbook');
 
-    if (focusbook == 'On') {
-        document.getElementById('focusbookButton').checked = true;
+    if(focusbook==null||focusbook==undefined)
+    {
+        localStorage.setItem('Focusbook', 'Off');
+        focusbook = 'Off';
+    }
+
+    if (focusbook == 'Off') 
+    {
+        document.getElementById('focusbookButton').checked = false;
         //document.getElementById('focusbookButton').classList.add('button-on');
     }
-    else {
-        document.getElementById('focusbookButton').checked = false;
+    else 
+    {
+        document.getElementById('focusbookButton').checked = true;
     }
 
 
     let blur = localStorage.getItem('Blur');
-    if (blur == 'On') {
-        document.getElementById('blurryStart').checked = true;
+
+    if(blur==null||blur==undefined)
+    {
+        localStorage.setItem('Blur', 'Off');
+        blur = 'Off';
     }
-    else {
+    if (blur == 'Off') 
+    {
         document.getElementById('blurryStart').checked = false;
+    }
+    else 
+    {
+        document.getElementById('blurryStart').checked = true;
     }
 
 
 
     let gender = localStorage.getItem('Gender');
+
+    if(gender==null||gender==undefined)
     {
-        if (gender == 'Male') {
-            document.getElementById('male').checked = true;
-        }
-        else {
-            document.getElementById('female').checked = true;
-        }
+        localStorage.setItem('Gender','Male');
+        gender='Male';
     }
+    
+    if (gender == 'Male') 
+    {
+        document.getElementById('male').checked = true;
+    }
+    else 
+    {
+        document.getElementById('female').checked = true;
+    }
+    
 
 
     let image= localStorage.getItem('HideImages');
+
+    if(image==null||image==undefined)
     {
-        if (image == 'On') {
-            document.getElementById('imagesButton').checked = true;
-        }
-        else {
-            document.getElementById('imagesButton').checked = false;
-        }
+        localStorage.setItem('HideImages','Off');
+        image='Off';
     }
+        
+    if (image == 'On') 
+    {
+        document.getElementById('imagesButton').checked = true;
+    }
+    else 
+    {
+        document.getElementById('imagesButton').checked = false;
+    }
+    
 
 
     let reels= localStorage.getItem('HideReels');
-    {
-        if (reels == 'On') {
-            document.getElementById('reelsButton').checked = true;
-        }
-        else {
-            document.getElementById('reelsButton').checked = false;
-        }
+
+    if(reels==null||reels==undefined)
+    {   
+        localStorage.setItem('HideReels','Off');
+        reels='Off';
     }
+    
+    if (reels == 'On') 
+    {
+        document.getElementById('reelsButton').checked = true;
+    }
+    else 
+    {
+        document.getElementById('reelsButton').checked = false;
+    }
+    
 
 
     let posts= localStorage.getItem('HidePosts');
+
+    if(posts==null||posts==undefined)
     {
-        if (posts == 'On') {
-            document.getElementById('postsButton').checked = true;
-        }
-        else {
-            document.getElementById('postsButton').checked = false;
-        }
+        localStorage.setItem('HidePosts','Off');
+        posts='Off';
     }
+    
+    if (posts == 'On') 
+    {
+        document.getElementById('postsButton').checked = true;
+    }
+    else 
+    {
+        document.getElementById('postsButton').checked = false;
+    }
+   
 }
